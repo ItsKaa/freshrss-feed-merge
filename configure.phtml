@@ -1,0 +1,53 @@
+<form action="<?php echo _url('extension', 'configure', 'e', urlencode($this->getName())); ?>" method="post">
+	<input type="hidden" name="_csrf" value="<?php echo FreshRSS_Auth::csrfToken(); ?>" />
+	<div class="form-group">
+		<label class="group-name" for="rss_bridge_url"><?php echo _t('ext.merge_url.rss_bridge_url'); ?></label>
+		<div class="group-controls">
+			<input required name="rss_bridge_url" id="rss_bridge_url" value="<?php echo $this->settings->getRssBridgeUrl(); ?>" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="group-name" for="rss_bridge_name"><?php echo _t('ext.merge_url.rss_bridge_name'); ?></label>
+		<div class="group-controls">
+			<input required name="rss_bridge_name" id="rss_bridge_name" value="<?php echo $this->settings->getRssBridgeName(); ?>" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="group-name" for="rss_bridge_limit"><?php echo _t('ext.merge_url.rss_bridge_limit'); ?></label>
+		<div class="group-controls">
+			<input required type="number" name="rss_bridge_limit" id="rss_bridge_limit" value="<?php echo $this->settings->getRssBridgeLimit(); ?>" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="group-name" for="label_feed"><?php echo _t('ext.merge_url.label_feed'); ?></label>
+		<div class="group-controls">
+			<input required name="label_feed" id="label_feed" value="<?php echo $this->settings->getLabelFeed(); ?>" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="group-name" for="label_feed_merge"><?php echo _t('ext.merge_url.label_feed_merge'); ?></label>
+		<div class="group-controls">
+			<input required name="label_feed_merge" id="label_feed_merge" value="<?php echo $this->settings->getLabelFeedMerge(); ?>" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="group-name" for="auto_update_fields"></label>
+		<div class="group-controls">
+			<label class="checkbox">
+				<input type='checkbox' name="auto_update_fields" id="auto_update_fields" <?php echo ($this->settings->getAutoUpdateFields() ? 'checked' : ''); ?> />
+				<?php echo _t('ext.merge_url.auto_update_fields'); ?>
+			</label>
+		</div>
+	</div>
+	
+
+	<div class="form-group form-actions">
+		<?php if (isset($this->error_write)) { ?>
+			<p class="alert alert-error"><?php echo _t('ext.merge_url.error_write', $this->error_write); ?></p>
+		<?php } ?>
+			<div class="group-controls">
+				<button type="submit" class="btn btn-important"><?php echo _t('gen.action.submit'); ?></button>
+				<button type="reset" class="btn"><?php echo _t('gen.action.cancel'); ?></button>
+			</div>
+	</div>
+</form>

@@ -1,0 +1,8 @@
+{
+	"name": "Merge Feeds",
+	"author": "ItsKaa",
+	"description": "Adds the option to easily combine multiple feeds using rss-bridge.",
+	"version": 0.1,
+	"entrypoint": "MergeFeeds",
+	"type": "user"
+}
