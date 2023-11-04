@@ -86,10 +86,10 @@ function handleButtonAddRemove(amount, isAddPage) {
 
 function addNewInputDiv(inputs_div, number, url, isAddPage) {
   var div = document.createElement("div");
-  div.className = "rss_mergefeed_item_div stick " + (isAddPage ? "" : "w100");
+  div.className = "rss_mergefeed_item_div";
   
   var input = document.createElement("input");
-  input.className = "rss_mergefeed_item_url";
+  input.className = "rss_mergefeed_item_url " + (isAddPage ? "" : "w100");
   input.id = "rss_mergefeed_item_url_" + number;
   input.required = true;
   input.value = decodeURIComponent(url);
