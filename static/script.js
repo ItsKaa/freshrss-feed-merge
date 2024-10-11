@@ -202,7 +202,7 @@ function pageEdit_handleEventAddControls() {
   
   var matches = getMatches(url_value);
   const feed_update = document.getElementById("feed_update");
-  const form = feed_update.getElementsByTagName("form")[0];
+  const form = feed_update.getElementsByTagName("fieldset")[0];
   if (form != null) {
     const form_groups = form.getElementsByClassName("form-group");
     for(var i = 0; i < form_groups.length; i++) {
